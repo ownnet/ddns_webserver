@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule  ^admin/[a-zA-Z0-9_?&/]*$ admin.php [L]
+    RewriteRule  ^admin admin.php [L]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule . index.php
+</IfModule>

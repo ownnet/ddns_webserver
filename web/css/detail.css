@@ -1,0 +1,533 @@
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+}
+.project{
+    height: 442px;
+    background: #fff;
+    padding: 20px 0 20px 20px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 0 40px rgba(216,216,216,.5);
+}
+.wrap-details{
+    margin-top: 20px;
+    height: auto;
+    color: lightgray;
+}
+.details-l{
+}
+.details-r{
+}
+.box-promoters{
+    height: 200px;
+    padding: 0 20px 20px;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 0 40px rgba(216,216,216,.5);
+
+}
+.common-title{
+    color: #323232;
+    font-size: 18px;
+    line-height: 56px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.box-promoters .promoters{
+    margin-top: 10px;
+}
+.box-promoters .promoters-img{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    float: left;
+    border-radius: 35px;
+    margin-right: 10px;
+}
+.box-promoters .promoters-detail{
+    padding-left: 40px;
+}
+.box-promoters .promoters-name{
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.box-promoters .promoters-num{
+    font-size: 14px;
+    color: #323232;
+    overflow: hidden;
+}
+.box-promoters .promoters-num div{
+    float: left;
+}
+.box-promoters .promoters-btns{
+    margin-top: 20px;
+    overflow: hidden;
+}
+.box-promoters .promoters-btns{
+    margin-left: 20px;
+}
+.box-promoters .promoters-btns a{
+    padding:5px 15px;
+    color: black;
+}
+.box-promoters .promoters-btns a:hover{
+    text-decoration: none;
+}
+
+.box-grade{
+    padding: 0 20px;
+    background: #fff;
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 0 40px rgba(216,216,216,.5);
+    color: black;
+}
+.common-title .t-people{
+    float: right;
+    line-height: 60px;
+    font-size: 14px;
+    color: #5e5e5e;
+}
+.details-r .box-grade .box-content{
+    border-top: 1px solid #e6e6e6;
+    width: 100%;
+    display: block;
+}
+.details-r .box-grade .box-limit{
+    width: 100%;
+    height: 50px;
+}
+.details-r .box-grade .box-limit .limit-num {
+    font-size: 14px;
+    font-weight: 700;
+    color: #323232;
+}
+.details-r .box-grade .box-limit .app-tag {
+    padding: 0 7px;
+    height: 18px;
+    color: #fff;
+    background: #ffaa05;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.details-r .box-grade .box-item {
+    font-size: 14px;
+    line-height: 22px;
+}
+.details-r .box-grade .box-item .font-b {
+    color: #323232;
+    font-weight: 600;
+}
+.details-r .box-grade .box-imglist {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.details-r .box-grade .box-imglist li{
+    list-style: none;
+}
+.font-red {
+    color: #ff5256;
+}
+.font-gray {
+    color: #999999;
+}
+.details-r .box-grade .box-item {
+    font-size: 14px;
+    line-height: 22px;
+}
+.details-r .box-grade .box-item {
+    font-size: 14px;
+    line-height: 22px;
+}
+.details-r .box-grade .box-btn {
+    padding: 15px 0 30px;
+}
+.details-r .box-grade .box-btn input{
+    width: 100px;
+}
+
+/*left side*/
+.tab-bg .tab-wrap{
+
+}
+.tab-bg .tab-name{
+    width: 180px;
+    height: 56px;
+    float: left;
+    line-height: 56px;
+    text-align: center;
+    color: #323232;
+    font-size: 18px;
+    cursor: pointer;
+}
+.tab-bg .current-now{
+    color: #2fd6a2;
+    font-weight: 700;
+    border-bottom: 3px solid #2fd6a2;
+}
+
+.tab-body{
+    clear: both;
+    padding-top: 10px;
+}
+.tab-div{
+    display: none;
+}
+.tab-body .current-now{
+    display: block;
+}
+.tab-div .tab-image-group{
+	overflow:hidden;
+}
+/*项目进展*/
+.tab-div .progress{
+    padding:20px 20px 40px;
+    background: white;
+    height: auto;
+}
+.tab-div .progress .p-info{
+    color: black;
+    background: #fffcf5;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 19px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tab-div .progress .p-img{
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    border-radius:30px;
+}
+.tab-div .progress .p-img-name{
+    color:black;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 70px;
+}
+.tab-div .progress .p-list{
+    clear: both;
+    border-left:1px solid lightgray;
+    margin-left: 30px;
+    height:100%
+}
+.tab-div .progress .p-list .p-list-wrap{
+    clear: both;
+    height: 100%;
+}
+.tab-div .progress .p-list .p-list-wrap .p-detail{
+    padding-top: 15px;
+}
+.tab-div .progress .p-list .p-list-wrap .p-detail .p-point{
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+    background-position: 0 -678px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    left: -6px;
+    top: 6px;
+    float: left;
+}
+.tab-div .progress .p-list .p-list-wrap .p-detail .p-day{
+    position: relative;
+    left: -58px;
+    float: left;
+}
+.tab-div .progress .p-list .p-list-wrap .p-detail p{
+    color: black;
+}
+.tab-div .progress .p-list .p-list-wrap .l-img{
+    overflow: hidden;
+    max-height: 500px;
+}
+/*支持者div*/
+.tab-div .p-support{
+
+}
+.tab-div .p-support .item-ul{
+    list-style: none;
+}
+.tab-div .p-support .item-ul .item-li{
+    float: left;
+    padding-bottom: 10px;
+}
+.tab-div .p-support .item-ul .item-li .item-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    overflow: hidden;
+    float: left;
+}
+.tab-div .p-support .item-ul .item-li .item-detail{
+    float: left;
+    margin-left: 15px;
+}
+.tab-div .p-support .item-ul .item-li .item-detail .item-support{
+    color: black;
+}
+.tab-div .p-support .item-ul .item-li .item-detail .item-name{
+    color: black;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.tab-div .p-support .item-ul .item-li .item-detail .item-num{
+    overflow: hidden;
+}
+.tab-div .p-support .item-ul .item-li .item-detail .item-num span {
+    margin-left: 3px;
+}
+.tab-div .p-support .item-ul .item-li .item-detail .item-num .line{
+    width: 1px;
+    height: 12px;
+    background: #e6e6e6;
+    margin: 4px 5px 0;
+    border-left: 1px solid;
+}
+
+/*topic*/
+.tab-div .p-topic{
+    padding: 10px 10px 10px 0;
+}
+.tab-div .p-topic .dialog-write{
+
+}
+.tab-div .p-topic .dialog-write .dialog-head{
+    background-image: url("images/exchange1.png");
+    background-repeat: no-repeat;
+    text-align: right;
+}
+.tab-div .p-topic .dialog-write .dialog-head a{
+    color: blue;
+}
+
+.tab-div .p-topic .dialog-write .dialog-text{
+
+}
+.tab-div .p-topic .dialog-write .dialog-text .dialog-textarea{
+    font-family: "Microsoft Yahei","微软雅黑";
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    color: #323232;
+    resize: none;
+    overflow: auto;
+}
+.tab-div .p-topic .dialog-write .dialog-control{
+    height: 40px;
+    line-height: 40px;
+}
+.tab-div .p-topic .dialog-write .dialog-control .input-limit{
+    float: left;
+}
+.tab-div .p-topic .dialog-write .dialog-control .input-submit{
+    float: right;
+}
+.tab-div .p-topic .dialog-write .dialog-control .input-submit input{
+    width: 100px;
+    height: 40px;
+    font-size: 1.2em;
+}
+.tab-div .p-topic .dialog-show{
+    color: black;
+}
+.tab-div .p-topic .dialog-show ul{
+    list-style: none;
+}
+.tab-div .p-topic .dialog-show ul li{
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid lightgray;
+}
+.tab-div .p-topic .dialog-show ul li .dialog-img{
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 30px;
+    float: left;
+
+}
+.tab-div .p-topic .dialog-show ul li .dialog-content{
+    padding-left: 75px;
+}
+.tab-div .p-topic .dialog-show ul li .dialog-content .dialog-detail{
+    padding-bottom: 10px;
+}
+.tab-div .p-topic .dialog-show ul li .dialog-content .dialog-reply{
+
+}
+.tab-div .p-topic .dialog-show ul li .dialog-content .dialog-reply span{
+    padding: 0 10px 0 10px;
+}
+.tab-div .p-topic .dialog-show ul li .dialog-content .reply-text{
+    border-bottom: 1px dotted #ccc;
+    background: #f5f5f5;
+    padding:5px 0 10px 0;
+}
+/*pagination*/
+.page-select{
+    clear: both;
+    overflow: hidden;
+    height: 42px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    color: black;
+}
+.page-select ul{
+    list-style: none;
+    float: right;
+}
+.page-select ul li{
+    text-decoration: none;
+    float: left;
+    border: 1px solid #eee;
+    margin-right: 3px;
+}
+.page-select ul li:hover{
+    border: 1px solid #2fd6a2;
+    background: rgba(47, 214, 162, 0.1);
+}
+.page-select ul li a{
+    padding: 10px 10px 10px 10px;
+    display: block;
+}
+.page-select ul li a:hover{
+    color:#2fd6a2;
+}
+.page-select .current,
+.page-select .current a:hover,
+.page-select .current:hover{
+    background: #2fd6a2;
+    color: white;
+}
+
+.project .project-img {
+    width: 790px;
+    height: 400px;
+    float: left;
+    position: relative;
+}
+.project .project-img i{
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    width: 110px;
+    height: 110px;
+}
+
+.project .project-img img{
+	width: 790px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.project .project-img  .zc-green-ing{
+    background-position: 0 -1148px;
+}
+.project .project-img  .zc-gray-ing{
+    background-position: 0 -1258px;
+}
+.project .project-img  .zc-orange-ing{
+    background-position: 0 -1368px;
+}
+.project .project-img  .zc-yellow-ing{
+    background-position: 0 -1478px;
+}
+.project .project-img  .zc-pink-ing{
+    background-position: 0 -1588px;
+}
+
+.project .p-introduce {
+    position: relative;
+    width: 340px;
+    height: 398px;
+    float: right;
+    color: #323232;
+}
+.project .p-introduce .p-title {
+    font-size: 24px;
+    width: 340px;
+    height: 42px;
+    line-height: 42px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.project .p-introduce .p-have {
+    font-size: 16px;
+    width: 340px;
+    height: 24px;
+    line-height: 24px;
+    margin: 10px 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.project .p-introduce .p-num {
+    font-family: Arial;
+    font-size: 48px;
+    width: 340px;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.project .p-introduce .p-bar {
+    width: 330px;
+    height: 8px;
+    margin-top: 10px;
+    background: #e6e6e6;
+    overflow: hidden;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.project .p-introduce .p-bar .p-bar-green {
+    height: 8px;
+    background-position: 0 0;
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+}
+.project .p-introduce .p-progress {
+    width: 330px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.project .p-introduce .p-target {
+    width: 330px;
+    margin-top: 5px;
+    color: #5e5e5e;
+    font-size: 14px;
+    line-height: 24px;
+}
+.project .p-introduce .p-btns {
+    margin-top: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+.project .p-introduce .p-btns a{
+    margin: 0 10px 0 10px;
+    width: 125px;
+    height: 45px;
+    line-height: 35px;
+    font-size: 1.2em;
+    font-weight: 600;
+}

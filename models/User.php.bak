@@ -1,0 +1,203 @@
+<?php
+
+namespace frontend\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "user".
+ *
+ * @property string $id
+ * @property string $user
+ * @property string $name
+ * @property string $password
+ * @property string $salt
+ * @property string $email
+ * @property string $phone
+ * @property string $user_money
+ * @property string $frozen_money
+ * @property string $status
+ */
+class User extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'user';
+    }
+
+    /**
+     * @inheritdoc
+     */
+ 	public function rules()
+    {
+        return [
+            [['user_money', 'frozen_money'], 'number'],
+            [['register_time', 'login_time'], 'safe'],
+            [['options'], 'string'],
+            [['status'], 'integer'],
+            [['user', 'name', 'password', 'salt', 'email', 'phone', 'group', 'unique_cookie'], 'string', 'max' => 255]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'user' => 'User',
+            'name' => 'Name',
+            'password' => 'Password',
+            'salt' => 'Salt',
+            'email' => 'Email',
+            'phone' => 'Phone',
+            'user_money' => 'User Money',
+            'frozen_money' => 'Frozen Money',
+            'register_time' => 'Register Time',
+            'login_time' => 'Login Time',
+            'group' => 'Group',
+            'unique_cookie' => 'Unique Cookie',
+            'options' => 'Options',
+            'status' => 'Status',
+        ];
+    }
+    
+    public function getUserList(){
+    	return User::find()->where(['<>','status','0'])->all();
+    }
+    public function getUserInfoByUser($user)
+    {
+    	return User::find()
+    	->where(['user'=>$user])
+    	->one();
+    }
+    
+    public function getUserInfoByID($id)
+    {
+    	return User::find()
+    	->where(['id'=>$id])
+    	->one();
+    }
+    
+    public function getUserListByID($id)
+    {
+    	return User::find()
+    	->where(['id'=>$id])
+    	->all();
+    }
+    
+    public function updateUserLoginDate($id)
+    {
+    	$t = User::findOne(['id'=>$id]);
+    	$t ->login_time = date("Y-m-d H:i:s");
+    	return $t->save();
+    }
+    
+    public function addNewUser($arr)
+    {
+    	$user = new User();
+    	$user->user=$arr['username'];
+    	$user->email=$arr['email'];
+    	$user->salt=time().rand(10000,99999);
+    	$user->register_time=date("Y-m-d H:i:s");
+    	$user->status = 1;
+    	return $user->save();
+    }
+    
+    public function updatePasswordByUserInfo($info,$password)
+    {
+    	$pwd = User::findOne(['user'=>$info['user']]);
+    	$pwd->password = md5($info['id'].$info['user'].$password.$info['salt']);
+    	return $pwd->save();
+    }
+    
+    public function updateUserInfo($id,$arr)
+    {
+    	$user = User::findOne(['id'=>$id]);
+    	$user->name = $arr['name'];
+    	$user->email = $arr['email'];
+    	$user->phone = $arr['phone'];
+    	return $user->save();
+    }
+    
+    public function updateUserMoney($id,$origin_money,$money)
+    {
+    	$s = User::findOne(['id'=>$id,'user_money'=>$origin_money]);
+    	if($s){
+    		$s->user_money = $money;
+    		return $s->save();
+    	}else{
+    		return 0;
+    	}
+    }
+    
+    public function updateFrozenMoney($id,$origin_money,$money)
+    {
+    	$s = User::findOne(['id'=>$id,'frozen_money'=>$origin_money]);
+    	if($s){
+    		$s->frozen_money = $money;
+    		return $s->save();
+    	}else{
+    		return 0;
+    	}
+    }
+    /*option 字段操作*/
+    //取项目，返回值为数组
+    public static function getUserOption($id,$item)
+    {
+    	$info = json_decode((new User())->getUserInfoByID($id)['options'],true);
+    	 
+    	if($info == '') return false;
+    
+    	if(array_key_exists($item,$info))
+    	{
+    		return $info[$item];
+    	}else{
+    		return false;
+    	}
+    }
+
+    //删除项目，返回值为剩余项目数组的json形式
+    public static function removeUserOption($id,$item)
+    {
+    	$info = json_decode((new User())->getUserInfoByID($id)['options'],true);
+    	if(array_key_exists($item,$info))
+    	{
+    		unset($info[$item]);
+    		return json_encode($info);
+    	}else{
+    		return false;
+    	}
+    }
+    //添加项目，返回值为添加后项目数组的json形式
+    public static function addUserOption($id,$item,$value)
+    {
+    	$info = json_decode((new User())->getUserInfoByID($id)['options'],true);
+    	if($info == '' || !array_key_exists($item,$info))
+    	{
+    		$info[$item] = $value;
+    		return json_encode($info);
+    	}else{
+    		return false;
+    	}
+    }
+    //更新
+    public static function updateUserOption($id,$item,$key,$value)
+    {
+    	$info = json_decode((new User())->getUserInfoByID($id)['options'],true);
+    	if(array_key_exists($item,$info)){
+    		if(array_key_exists($key,$info[$item])){
+    			$info[$item][$key]=$value;
+    			return json_encode($info);
+    		}else{
+    			return false;
+    		}
+    	}else{
+    		return false;
+    	}
+    }
+}
