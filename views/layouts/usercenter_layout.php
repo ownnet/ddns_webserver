@@ -135,10 +135,11 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= date('Y') ?></p>
-        <p class="pull-right"></p>
+        <p class="pull-left">&copy; 2017</p>
+        <p class="pull-right">Ownnet</p>
     </div>
 </footer>
+
 </div>
 <script src="js/jquery-1.12.2.min.js"></script>
 <?php $this->endBody() ?>

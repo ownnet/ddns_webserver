@@ -31,8 +31,8 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= date('Y') ?></p>
-        <p class="pull-right">文银网络</p>
+        <p class="pull-left">&copy; 2017</p>
+        <p class="pull-right">Ownnet</p>
     </div>
 </footer>
 

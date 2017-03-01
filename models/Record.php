@@ -98,11 +98,15 @@ class Record extends \yii\db\ActiveRecord
     	return $record->save();
     }
     
-    public function updateIpByAuthCode($auth_code,$ip,$status = 1)
+    public function updateIpByAuthCode($domain,$auth_code,$ip,$status = 1)
     {   	
-    	$record = Record::findOne(['auth_code'=>$auth_code,'status'=>$status]);
-    	$record->value = $ip;
-    	return $record->save();
+    	$record = Record::findOne(['host'=>$domain,'auth_code'=>$auth_code,'status'=>$status]);
+    	if($record){
+    		$record->value = $ip;
+    		return $record->save();
+    	}else{
+    		return 'error_domain_not_exists';
+    	}
     }
     
     public function updateStatus($id,$status)

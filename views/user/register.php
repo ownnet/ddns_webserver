@@ -1,5 +1,5 @@
 <?php 
-use yii\widgets\ActiveForm;
+	$this->title = 'Register';
 ?>
 <link href="css/chosen.min.css" rel="stylesheet">
 <link href="css/charisma-app.css" rel="stylesheet">

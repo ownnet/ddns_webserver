@@ -19,7 +19,7 @@ class ApiController extends Controller
 	
 	public function actionIndex()
 	{
-		echo md5('0user1user119852');
+		echo 'API';
 	}
 	
 	public function actionGetip()
@@ -135,12 +135,15 @@ class ApiController extends Controller
 			if($post['auth'] == md5($time_auth_code.$item['auth_code']) OR 
 					$post['auth'] == md5((string)($time_auth_code - 1).$item['auth_code']) OR 
 					$post['auth'] == md5((string)($time_auth_code + 1).$item['auth_code'])){
-				(new Record())->updateIpByAuthCode($item['auth_code'], $post['ip']);
-				return 'success';
+				$rst = (new Record())->updateIpByAuthCode($post['domain'],$item['auth_code'], $post['ip']);
+				if($rst == 1)
+					return 'success';
+				else
+					return $rst;
 			}
 		}
 		
-		return 'error:time_'.$time_auth_code;
+		return 'error:time_'.time();
 	}
 	
 	/**
@@ -157,10 +160,11 @@ class ApiController extends Controller
 			}elseif(count($record) == 0){
 				return 'error:domain_not_exists';
 			}else{
-				if((new Record())->updateIpByAuthCode($record[0]['auth_code'], $get['ip'])){
+				$rst = (new Record())->updateIpByAuthCode($get['domain'],$record[0]['auth_code'], $get['ip']);
+				if($rst == 1){
 					return 'success';
 				}else{
-					return 'error:db_error';
+					return $rst;
 				}
 			}
 		}else{
@@ -173,7 +177,8 @@ class ApiController extends Controller
 	 */
 	private function authcodeVersion($get)
 	{
-		if((new Record())->updateIpByAuthCode($get['auth_code'], $get['ip'])){
+		$rst = (new Record())->updateIpByAuthCode($get['domain'],$get['auth_code'], $get['ip']);
+		if($rst == 1){
 			return 'success';
 		}else{
 			return 'error:auth_code_invalid';

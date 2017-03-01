@@ -1,5 +1,5 @@
 <?php 
-	$this->title = 'ARTIPO';
+	$this->title = 'Login';
 ?>
 <link href="css/chosen.min.css" rel="stylesheet">
 <link href="css/charisma-app.css" rel="stylesheet">
