@@ -12,6 +12,8 @@ class SiteController extends UserCenterController
 	public function init()
 	{
 		$this->layout = 'usercenter_layout';
+		
+		$this->authCheck();
 	}
 	
     public function actionIndex()

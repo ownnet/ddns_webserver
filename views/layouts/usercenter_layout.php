@@ -57,7 +57,7 @@ AppAsset::register($this);
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> admin</span>
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> <?=Yii::$app->view->params['user']?></span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -100,6 +100,7 @@ AppAsset::register($this);
                                 <li><a href="<?=Yii::$app->getUrlManager()->createUrl('domain/new')?>">添加新域名</a></li>
                             </ul>
                         </li>
+                        <?php if(Yii::$app->view->params['uid'] == 1): ?>
                         <li class="accordion">
                         	<a href="#"><i class="fa fa-group"></i><span> 站点管理</span></a>
                         	<ul class="nav nav-pills nav-stacked">
@@ -108,6 +109,7 @@ AppAsset::register($this);
                                 <li><a href="<?=Yii::$app->getUrlManager()->createUrl('user/add')?>">添加新用户</a></li>
                             </ul>
                         </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
@@ -135,7 +137,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; 2017</p>
+        <p class="pull-left">&copy; 2017 DDNS WebServer Version:<?=Yii::$app->view->params['version']?></p>
         <p class="pull-right">Ownnet</p>
     </div>
 </footer>

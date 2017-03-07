@@ -12,7 +12,7 @@ $this->title = 'My Yii Application';
 		<div class="box-inner">
 			<div class="box-header well" data-original-title="">
 				<h2>
-					<i class="glyphicon glyphicon-user"></i> Responsive, Swipable Table
+					<i class="fa fa-cog fa-spin fa-fw"></i> Settings
 				</h2>
 				<div class="box-icon">
 					<a href="#" class="btn btn-minimize btn-round btn-default"><i

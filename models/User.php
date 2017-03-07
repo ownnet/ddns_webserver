@@ -100,6 +100,7 @@ class User extends \yii\db\ActiveRecord
     	$user->user=$arr['username'];
     	$user->email=$arr['email'];
     	$user->salt=time().rand(10000,99999);
+    	$user->token = md5(time().rand(10000,99999));
     	$user->status = 1;
     	return $user->save();
     }

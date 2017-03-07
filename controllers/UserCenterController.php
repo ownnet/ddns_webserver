@@ -5,6 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\base\Object;
 use yii\db\Exception;
+use app\models\User;
 
 
 
@@ -31,6 +32,11 @@ class UserCenterController extends Controller
 		$this->home_url = Yii::$app->request->hostInfo.Yii::$app->user->returnUrl;
 		//获取uid，未登录则为null
 		$this->uid = empty(Yii::$app->session['id'])?null:Yii::$app->session['id'];
+		Yii::$app->view->params['uid'] = $this->uid;
+		if($this->uid){
+			Yii::$app->view->params['user'] = (new User())->getUserInfoByID($this->uid)->attributes['user'];
+		}
+		Yii::$app->view->params['version'] =  '0.1.0';
 		
 		//获取uid及传递姓名及头像参数
 		/*
@@ -59,6 +65,14 @@ class UserCenterController extends Controller
 			}
 		}else{
 			return 1;
+		}
+	}
+	
+	public function authCheck()
+	{
+		if($this->uid != 1){
+			echo '权限错误';
+			exit();
 		}
 	}
 	

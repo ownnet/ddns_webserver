@@ -65,9 +65,8 @@ use common\widgets\Alert;
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">&copy; 2017 DDNS WebServer Version:<?=Yii::$app->view->params['version']?></p>
+        <p class="pull-right">Ownnet</p>
     </div>
 </footer>
 

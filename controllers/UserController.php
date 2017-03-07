@@ -155,21 +155,22 @@ class UserController extends UserCenterController
 	
 	public function actionList()
 	{
+		$this->authCheck();
+		
 		$data['user']=(new User())->getUserList();
 		return $this->render('list',$data);
 	}
 	
 	public function actionAdd()
 	{
+		$this->authCheck();
+		
 		return $this->render('add');
 	}
 	
 	public function actionEdit($id)
 	{
-		if($this->uid != 1){
-			echo '权限错误';
-			exit();
-		}
+		$this->authCheck();
 		
 		if(Yii::$app->request->post())
 		{
@@ -203,11 +204,7 @@ class UserController extends UserCenterController
 	
 	public function actionDel($id)
 	{
-		$this->layout = 'blank';
-		if($this->uid != 1){
-			echo '权限错误';
-			exit();
-		}
+		$this->authCheck();
 	
 		$data['user'] = (new User())->getUserInfoByID($id);
 		$post = Yii::$app->request->post();

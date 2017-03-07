@@ -31,7 +31,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; 2017</p>
+        <p class="pull-left">&copy; 2017 DDNS WebServer Version:<?=Yii::$app->view->params['version']?></p>
         <p class="pull-right">Ownnet</p>
     </div>
 </footer>
